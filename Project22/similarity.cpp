@@ -13,18 +13,24 @@ public:
 		int len1 = input1.length();
 		int len2 = input2.length();
 		if (len1 == len2) return MAX_LEN_POINT;
-		if (len1 == len2 * 2 || len1 * 2 == len2) return MIN_LEN_POINT;
-
-		 double gap, min;
+		if (isTwiceLength(len1, len2)) return MIN_LEN_POINT;
+		return getPartialPoint(len1, len2);
+	}
+	bool isTwiceLength(int len1, int len2)
+	{
+		return len1 == len2 * 2 || len1 * 2 == len2;
+	}
+	int getPartialPoint(int len1, int len2)
+	{
+		double gap, min;
 		if (len1 > len2) {
 			gap = len1 - len2;
 			min = len2;
-			return (1 - static_cast<double>(len1 - len2) / len2) * 60;
 		}
 		else {
 			gap = len2 - len1;
 			min = len1;
 		}
-		return (1- gap / min) * 60;
+		return (1 - gap / min) * 60;
 	}
 };
