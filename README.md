@@ -1,0 +1,4 @@
+### Similarity KATA
+...
+Similarity TDD
+
