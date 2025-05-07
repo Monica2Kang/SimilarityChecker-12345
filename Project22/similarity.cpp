@@ -16,11 +16,14 @@ public:
 		if (isTwiceLength(len1, len2)) return MIN_LEN_POINT;
 		return getPartialPoint(len1, len2);
 	}
-	bool isTwiceLength(int len1, int len2)
+
+	bool isTwiceLength(int len1, int len2) const
 	{
-		return len1 == len2 * 2 || len1 * 2 == len2;
+		if(len1 < len2) return len1 * 2 <= len2;
+		return len1 >= len2 * 2;
 	}
-	int getPartialPoint(int len1, int len2)
+
+	int getPartialPoint(int len1, int len2) const 
 	{
 		double gap, min;
 		if (len1 > len2) {
