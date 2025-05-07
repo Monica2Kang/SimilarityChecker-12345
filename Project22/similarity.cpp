@@ -9,7 +9,7 @@ const int MIN_LEN_POINT = 0;
 
 class Similarity {
 public:
-	int checkLength(string input1, string input2) {
+	int checkLength(const string input1, const string input2) const {
 		int len1 = input1.length();
 		int len2 = input2.length();
 		if (len1 == len2) return MAX_LEN_POINT;
